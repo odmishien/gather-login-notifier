@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "gather-login-notifier"
+version = "0.1.0"
+description = ""
+authors = ["odmishien <tmtm.yagi.007@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+selenium = "^3.141.0"
+chromedriver-binary = "^84.0.4147.30.0"
+slackweb = "^1.0.5"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"

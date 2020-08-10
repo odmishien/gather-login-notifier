@@ -1,0 +1,4 @@
+chromedriver-binary==84.0.4147.30.0
+selenium==3.141.0
+slackweb==1.0.5
+urllib3==1.25.10
