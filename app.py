@@ -8,7 +8,7 @@ import chromedriver_binary
 import slackweb
 
 SLACK_WEBHOOK_URL = os.environ.get('SLACK_WEBHOOK_URL')
-VIRTUAL_B419_URL = os.environ.get('VIRTUAL_B419_URL')
+GATHER_SPACE_URL = os.environ.get('GATHER_SPACE_URL')
 
 def notify_slack(participants_num):
     if participants_num == 0:
@@ -25,7 +25,7 @@ if __name__ == "__main__":
     driver = webdriver.Chrome(options=options)
 
     try:
-        driver.get(VIRTUAL_B419_URL)
+        driver.get(GATHER_SPACE_URL)
         time.sleep(5)
         driver.find_element_by_css_selector(
             "div.horizontal-container.action.test-yes-button").click()
