@@ -14,7 +14,9 @@ def notify_slack(participants_num):
     if participants_num == 0:
         return
     slack = slackweb.Slack(url=SLACK_WEBHOOK_URL)
-    slack.notify(text=f'*{participants_num}人* がバB419にいるよ', mrkdwn=True)
+    message = f'*{participants_num}人* がバB419にいるよ'
+    slack.notify(text=message, mrkdwn=True)
+    print(f'send message successfully: {message}')
 
 
 if __name__ == "__main__":
