@@ -29,13 +29,13 @@ if __name__ == "__main__":
         time.sleep(5)
         driver.find_element_by_css_selector(
             "div.horizontal-container.action.test-yes-button").click()
+        time.sleep(10)
+        driver.find_element_by_css_selector("div.GameBody-finish").click()
         time.sleep(3)
-        driver.find_element_by_css_selector(
-            "div.horizontal-container.action.test-yes-button").click()
-        time.sleep(5)
         participants_text = driver.find_element_by_css_selector(
-            "span.u-header-text").text
+            "div.u-header-text").text
         participants_num = re.search(r'\d+', participants_text).group(0)
+        print(participants_num)
         notify_slack(int(participants_num) - 1)
     except:
         traceback.print_exc()
