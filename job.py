@@ -18,14 +18,11 @@ def notify_slack(participants_num):
     slack.notify(text=message, mrkdwn=True)
     print(f'send message successfully: {message}')
 
-def get_chrome_driver():
-    return webdriver.Chrome()
+def get_chrome_driver(options):
+    return webdriver.Chrome(options=options)
 
 def get_participants_num(driver):
     driver.get(GATHER_SPACE_URL)
-    time.sleep(5)
-    driver.find_element_by_css_selector(
-        "div.horizontal-container.action.test-yes-button").click()
     time.sleep(10)
     driver.find_element_by_css_selector("div.GameBody-finish").click()
     time.sleep(3)
@@ -35,7 +32,10 @@ def get_participants_num(driver):
     return int(participants_num) - 1
 
 if __name__ == "__main__":
-    driver = get_chrome_driver()
+    options = Options()
+    options.add_argument("--user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.125 Safari/537.36")
+    options.add_argument("--headless")
+    driver = get_chrome_driver(options)
     try:
         notify_slack(get_participants_num(driver))
     except:
