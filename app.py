@@ -8,6 +8,7 @@ app = Flask(__name__)
 def participants_num():
     options = Options()
     options.add_argument("--user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.125 Safari/537.36")
+    options.add_argument("--window-size=1280x1696")
     options.add_argument("--headless")
     driver = get_chrome_driver(options)
     participants_num = get_participants_num(driver)
