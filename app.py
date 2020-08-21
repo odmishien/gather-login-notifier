@@ -6,8 +6,7 @@ app = Flask(__name__)
 
 @app.route("/participants-num", methods=['GET'])
 def participants_num():
-    options = Options()
-    driver = get_chrome_driver(options)
+    driver = get_chrome_driver()
     participants_num = get_participants_num(driver)
     if participants_num == 0:
         text = 'バB419には....誰もいません... :crying:'
