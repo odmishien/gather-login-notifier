@@ -36,7 +36,6 @@ def get_participants_num(driver):
 
 if __name__ == "__main__":
     options = Options()
-    options.add_argument("--headless")
     driver = get_chrome_driver(options)
     try:
         notify_slack(get_participants_num(driver))
