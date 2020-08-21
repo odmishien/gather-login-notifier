@@ -10,6 +10,7 @@ selenium = "^3.141.0"
 chromedriver-binary = "^84.0.4147.30.0"
 slackweb = "^1.0.5"
 flask = "^1.1.2"
+gunicorn = "^20.0.4"
 
 [tool.poetry.dev-dependencies]
 
