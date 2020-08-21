@@ -23,7 +23,7 @@ def get_chrome_driver(options):
 
 def get_participants_num(driver):
     driver.get(GATHER_SPACE_URL)
-    time.sleep(10)
+    time.sleep(20)
     driver.find_element_by_css_selector("div.GameBody-finish").click()
     time.sleep(3)
     participants_text = driver.find_element_by_css_selector(
